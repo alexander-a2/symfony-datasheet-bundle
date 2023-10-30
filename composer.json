@@ -1,0 +1,22 @@
+{
+    "name": "alexander-a2/symfony-datasheet-bundle",
+    "description": "Symfony Datasheet Bundle",
+    "autoload": {
+        "psr-4": {
+            "AlexanderA2\\SymfonyDatasheetBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander A2"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Packages/php-datasheet"
+        }
+    ]
+}
