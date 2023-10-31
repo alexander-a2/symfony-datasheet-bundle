@@ -1,6 +1,7 @@
 class Datasheet {
 
     constructor(datasheet) {
+        console.log('Initializing datasheet ' + datasheet.getAttribute('data-datasheet'));
         this.datasheet = {
             container: datasheet,
             id: datasheet.getAttribute('data-datasheet'),
@@ -38,19 +39,19 @@ class Datasheet {
         }
 
         if (currentPage !== 1) {
-            this.paginationContainer.appendChild(this.datasheetPaginationBuildButton(1, 'First', currentPage));
+            this.paginationContainer.appendChild(this.buildPaginationButton(1, 'First', currentPage));
         }
 
         pageButtons.forEach((number) => {
-            this.paginationContainer.appendChild(this.datasheetPaginationBuildButton(number, number, currentPage));
+            this.paginationContainer.appendChild(this.buildPaginationButton(number, number, currentPage));
         });
 
         if (currentPage !== pagesTotal) {
-            this.paginationContainer.appendChild(this.datasheetPaginationBuildButton(pagesTotal, 'Last', currentPage));
+            this.paginationContainer.appendChild(this.buildPaginationButton(pagesTotal, 'Last', currentPage));
         }
     }
 
-    datasheetPaginationBuildButton(number, text, currentPage) {
+    buildPaginationButton(number, text, currentPage) {
         const li = document.createElement("li");
         li.className = "page-item" + (currentPage === number ? " active" : "");
 
@@ -62,7 +63,7 @@ class Datasheet {
 
         link.addEventListener("click", (event) => {
             event.preventDefault();
-            this.datasheetPaginationChange(event.target);
+            this.onPaginationChange(event.target);
         });
 
         li.appendChild(link);
@@ -70,18 +71,18 @@ class Datasheet {
         return li;
     }
 
-    datasheetPaginationChange(paginationElement) {
+    onPaginationChange(paginationElement) {
         let inputName = this.datasheet.id + '[' + [
             this.datasheet.queryKey.datasheetFilters,
             'pgn',
             'currentPage',
         ].join('][') + ']';
-        this.datasheet.container.querySelector('[name="' + inputName + '"]').value = paginationElement.dataset.pageNumber;
-        this.datasheet.form.submit();
+
+        let url = new URL(window.location.href);
+        url.searchParams.set(inputName, paginationElement.dataset.pageNumber);
+        window.location.search = url.search;
     }
 }
-
-console.log('Initializing datasheets…');
 
 document
     .querySelectorAll('[data-datasheet]')
