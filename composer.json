@@ -12,11 +12,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../Packages/php-datasheet"
-        }
-    ]
+    "require": {
+        "alexander-a2/php-datasheet": "dev-main"
+    }
 }
