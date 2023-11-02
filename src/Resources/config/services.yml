@@ -8,3 +8,55 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Tests/'
+
+    _instanceof:
+        AlexanderA2\PhpDatasheet\DataReader\DataReaderInterface:
+            tags: [ 'datasheet.data_reader' ]
+        AlexanderA2\PhpDatasheet\Builder\Column\ColumnBuilderInterface:
+            tags: [ 'datasheet.column_builder' ]
+        AlexanderA2\PhpDatasheet\FilterApplier\FilterApplierInterface:
+            tags: [ 'datasheet.column_builder' ]
+
+    AlexanderA2\PhpDatasheet\Builder\DatasheetBuilder: ~
+
+    AlexanderA2\PhpDatasheet\Resolver\DataReaderResolver:
+        bind:
+            $services: !tagged_iterator datasheet.data_reader
+
+    AlexanderA2\PhpDatasheet\Resolver\ColumnBuilderResolver:
+        bind:
+            $services: !tagged_iterator datasheet.column_builder
+
+    AlexanderA2\PhpDatasheet\Resolver\FilterApplierResolver:
+        bind:
+            $services: !tagged_iterator datasheet.filter_applier
+
+    # Data readers
+    AlexanderA2\PhpDatasheet\DataReader\ArrayDataReader:
+        tags: [ 'datasheet.data_reader' ]
+    AlexanderA2\PhpDatasheet\DataReader\QueryBuilderDataReader:
+        tags: [ 'datasheet.data_reader' ]
+
+    # Column builders
+    AlexanderA2\PhpDatasheet\Builder\Column\ArrayDatasheetColumnBuilder:
+        tags: [ 'datasheet.column_builder' ]
+    AlexanderA2\PhpDatasheet\Builder\Column\QueryBuilderDatasheetColumnBuilder:
+        tags: [ 'datasheet.column_builder' ]
+
+    # Filter appliers
+    AlexanderA2\PhpDatasheet\FilterApplier\ArrayDatasheet\ColumnFilter\ContainsFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\ArrayDatasheet\ColumnFilter\EqualsFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\ArrayDatasheet\DatasheetFilter\PaginationFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\ArrayDatasheet\DatasheetFilter\SortFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\QueryBuilderDatasheet\ColumnFilter\ContainsFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\QueryBuilderDatasheet\ColumnFilter\EqualsFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\QueryBuilderDatasheet\DatasheetFilter\PaginationFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
+    AlexanderA2\PhpDatasheet\FilterApplier\QueryBuilderDatasheet\DatasheetFilter\SortFilterApplier:
+        tags: [ 'datasheet.filter_applier' ]
