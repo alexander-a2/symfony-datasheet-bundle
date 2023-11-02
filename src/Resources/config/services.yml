@@ -15,7 +15,7 @@ services:
         AlexanderA2\PhpDatasheet\Builder\Column\ColumnBuilderInterface:
             tags: [ 'datasheet.column_builder' ]
         AlexanderA2\PhpDatasheet\FilterApplier\FilterApplierInterface:
-            tags: [ 'datasheet.column_builder' ]
+            tags: [ 'datasheet.filter_applier' ]
 
     AlexanderA2\PhpDatasheet\Builder\DatasheetBuilder: ~
 

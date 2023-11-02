@@ -41,6 +41,7 @@ class DatasheetExtension extends AbstractExtension
             return $this->twig->render('@Datasheet/exception.html.twig', [
                 'datasheet' => $datasheet,
                 'exception' => $exception,
+                'trace' => $exception->getTraceAsString(),
             ]);
         }
     }
