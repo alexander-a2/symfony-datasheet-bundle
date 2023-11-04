@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexander-a2/php-datasheet.git",
-                "reference": "c70a8f19b4c01187e7c4b56c64e0da6e3159c4e8"
+                "reference": "1798cbed1ecaaf0d304691b4c8b046a1a7a1c5ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexander-a2/php-datasheet/zipball/c70a8f19b4c01187e7c4b56c64e0da6e3159c4e8",
-                "reference": "c70a8f19b4c01187e7c4b56c64e0da6e3159c4e8",
+                "url": "https://api.github.com/repos/alexander-a2/php-datasheet/zipball/1798cbed1ecaaf0d304691b4c8b046a1a7a1c5ca",
+                "reference": "1798cbed1ecaaf0d304691b4c8b046a1a7a1c5ca",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "issues": "https://github.com/alexander-a2/php-datasheet/issues",
                 "source": "https://github.com/alexander-a2/php-datasheet/tree/main"
             },
-            "time": "2023-10-31T12:16:46+00:00"
+            "time": "2023-11-04T16:04:03+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -1931,7 +1931,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "alexander-a2/php-datasheet": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
