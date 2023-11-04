@@ -1,6 +1,6 @@
 class Datasheet {
 
-    constructor(datasheet) {
+    constructor(datasheet, translations) {
         console.log('Initializing datasheet ' + datasheet.getAttribute('data-datasheet'));
         this.datasheet = {
             container: datasheet,
@@ -8,8 +8,18 @@ class Datasheet {
             form: datasheet.querySelector('[data-datasheet-form]'),
             queryKey: {
                 datasheetFilters: datasheet.getAttribute('data-datasheet-filters-key'),
+            },
+            translations: {
+                pagination: {
+                    first_page: 'First',
+                    last_page: 'Last',
+                }
             }
         };
+
+        if(translations){
+            this.datasheet.translations = translations;
+        }
         this.readPagination();
         this.buildPagination();
     }
@@ -22,7 +32,6 @@ class Datasheet {
             pagesTotal: parseInt(this.paginationContainer.getAttribute('data-datasheet-pagination-pages-total')),
             currentPage: parseInt(this.paginationContainer.getAttribute('data-datasheet-pagination-current-page')),
         }
-        console.log({'pagination': this.pagination});
     }
 
     buildPagination() {
@@ -39,7 +48,7 @@ class Datasheet {
         }
 
         if (currentPage !== 1) {
-            this.paginationContainer.appendChild(this.buildPaginationButton(1, 'First', currentPage));
+            this.paginationContainer.appendChild(this.buildPaginationButton(1, this.datasheet.translations.pagination.first_page, currentPage));
         }
 
         pageButtons.forEach((number) => {
@@ -47,7 +56,7 @@ class Datasheet {
         });
 
         if (currentPage !== pagesTotal) {
-            this.paginationContainer.appendChild(this.buildPaginationButton(pagesTotal, 'Last', currentPage));
+            this.paginationContainer.appendChild(this.buildPaginationButton(pagesTotal, this.datasheet.translations.pagination.last_page, currentPage));
         }
     }
 
@@ -83,7 +92,3 @@ class Datasheet {
         window.location.search = url.search;
     }
 }
-
-document
-    .querySelectorAll('[data-datasheet]')
-    .forEach(element => new Datasheet(element));

@@ -1,4 +1,4 @@
-{# {{ dump(datasheet) }}#}
+ {{ dump(datasheet) }}
 {% set recordsTotal = datasheet.totalRecordsFiltered %}
 {% set recordsPerPage = datasheet.filter('pgn').parameter('recordsPerPage') %}
 {% set pagesTotal = (recordsTotal / recordsPerPage)|round(0, 'ceil') %}
@@ -21,7 +21,7 @@
         <table class="table table-sm table-striped">
             <thead>
             {% for column in datasheet.columns %}
-                <th>{{ column.title }}</th>
+                <th>{{ column.title|translate }}</th>
             {% endfor %}
             </thead>
 

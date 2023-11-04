@@ -1,0 +1,4 @@
+datasheet:
+  pagination:
+    first_page: 'В начало'
+    last_page: 'В конец'
