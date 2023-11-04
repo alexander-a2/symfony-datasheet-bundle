@@ -39,7 +39,7 @@
         </table>
         <div>
             <nav>
-                <ul class="pagination m-0"
+                <ul class="pagination m-2"
                     data-datasheet-pagination="{{ datasheet.name }}"
                     data-datasheet-pagination-records-total="{{ recordsTotal }}"
                     data-datasheet-pagination-records-per-page="{{ recordsPerPage }}"
@@ -47,12 +47,12 @@
                     data-datasheet-pagination-current-page="{{ currentPage }}"
                 >
                 </ul>
-                <small class="text-muted">
-                    Records total: {{ recordsTotal }},
-                    Records per page: {{ recordsPerPage }},
-                    Pages total: {{ pagesTotal }},
-                    Current page: {{ currentPage }}
-                </small>
+                <div class="text-muted">
+                    {{ 'datasheet.pagination.records_total'|trans }}: {{ recordsTotal }},
+                    {{ 'datasheet.pagination.records_per_page'|trans }}: {{ recordsPerPage }},
+                    {{ 'datasheet.pagination.pages_total'|trans }}: {{ pagesTotal }},
+                    {{ 'datasheet.pagination.current_page'|trans }}: {{ currentPage }}
+                </div>
             </nav>
         </div>
     </form>

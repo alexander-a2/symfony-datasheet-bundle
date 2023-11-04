@@ -2,3 +2,7 @@ datasheet:
   pagination:
     first_page: 'В начало'
     last_page: 'В конец'
+    records_total: 'Записей всего'
+    records_per_page: 'Записей на страницу'
+    pages_total: 'Страниц всего'
+    current_page: 'Текущая страница'
