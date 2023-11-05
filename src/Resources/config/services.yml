@@ -18,6 +18,7 @@ services:
             tags: [ 'datasheet.filter_applier' ]
 
     AlexanderA2\PhpDatasheet\Builder\DatasheetBuilder: ~
+    AlexanderA2\PhpDatasheet\Helper\EntityHelper: ~
 
     AlexanderA2\PhpDatasheet\Resolver\DataReaderResolver:
         bind:
