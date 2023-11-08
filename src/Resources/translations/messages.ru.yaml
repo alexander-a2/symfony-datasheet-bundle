@@ -6,3 +6,4 @@ datasheet:
     records_per_page: 'Записей на страницу'
     pages_total: 'Страниц всего'
     current_page: 'Текущая страница'
+  empty: 'empty'

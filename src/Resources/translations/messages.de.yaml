@@ -1,0 +1,9 @@
+datasheet:
+  pagination:
+    first_page: 'Zum Anfang'
+    last_page: 'Am Ende'
+    records_total: 'Rekorde insgesamt'
+    records_per_page: 'Einträge pro Seite'
+    pages_total: 'Seiten insgesamt'
+    current_page: 'Aktuelle Seite'
+  empty: 'Leer'
