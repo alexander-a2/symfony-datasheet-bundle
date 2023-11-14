@@ -5,7 +5,7 @@ namespace AlexanderA2\SymfonyDatasheetBundle\DataReader;
 use AlexanderA2\PhpDatasheet\DataReader\DataReaderInterface;
 use AlexanderA2\PhpDatasheet\DataReader\QueryBuilderDataReader;
 use AlexanderA2\PhpDatasheet\DatasheetInterface;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityRepository;
 
 class EntityDataReader extends QueryBuilderDataReader implements DataReaderInterface
 {
@@ -18,6 +18,6 @@ class EntityDataReader extends QueryBuilderDataReader implements DataReaderInter
 
     public static function supports(DatasheetInterface $datasheet): bool
     {
-        return $datasheet->getSource() instanceof ServiceEntityRepository;
+        return $datasheet->getSource() instanceof EntityRepository;
     }
 }
