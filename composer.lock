@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexander-a2/php-datasheet.git",
-                "reference": "a91eb54712b31a067c013d35b02d012ab80e651d"
+                "reference": "873a2cce57ad203c53c450f0b8fea8468af07d7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexander-a2/php-datasheet/zipball/a91eb54712b31a067c013d35b02d012ab80e651d",
-                "reference": "a91eb54712b31a067c013d35b02d012ab80e651d",
+                "url": "https://api.github.com/repos/alexander-a2/php-datasheet/zipball/873a2cce57ad203c53c450f0b8fea8468af07d7c",
+                "reference": "873a2cce57ad203c53c450f0b8fea8468af07d7c",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "issues": "https://github.com/alexander-a2/php-datasheet/issues",
                 "source": "https://github.com/alexander-a2/php-datasheet/tree/main"
             },
-            "time": "2023-11-14T19:49:52+00:00"
+            "time": "2023-11-15T20:22:07+00:00"
         },
         {
             "name": "doctrine/cache",

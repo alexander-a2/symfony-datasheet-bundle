@@ -20,4 +20,9 @@ class EntityDataReader extends QueryBuilderDataReader implements DataReaderInter
     {
         return $datasheet->getSource() instanceof EntityRepository;
     }
+
+    public static function getDefaultPriority(): int
+    {
+        return 600;
+    }
 }

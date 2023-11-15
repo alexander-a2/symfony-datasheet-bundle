@@ -33,10 +33,10 @@ services:
             $services: !tagged_iterator datasheet.filter_applier
 
     # Data readers
-    AlexanderA2\PhpDatasheet\DataReader\ArrayDataReader:
-        tags: [ 'datasheet.data_reader' ]
     AlexanderA2\PhpDatasheet\DataReader\QueryBuilderDataReader:
-        tags: [ 'datasheet.data_reader' ]
+        tags: [ { name: 'datasheet.data_reader', priority: 100 } ]
+    AlexanderA2\PhpDatasheet\DataReader\ArrayDataReader:
+        tags: [ { name: 'datasheet.data_reader', priority: 90 } ]
 
     # Column builders
     AlexanderA2\PhpDatasheet\Builder\Column\ArrayDatasheetColumnBuilder:
