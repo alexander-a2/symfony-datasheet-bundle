@@ -9,7 +9,7 @@ use AlexanderA2\SymfonyDatasheetBundle\DataReader\NestedTreeDataReader;
 
 class NestedTreeDatasheetColumnBuilder extends QueryBuilderDatasheetColumnBuilder implements ColumnBuilderInterface
 {
-    private const ENTITY_SPECIFIC_FIELDS = [
+    public const ENTITY_SPECIFIC_FIELDS = [
         'lft',
         'lvl',
         'rgt',
