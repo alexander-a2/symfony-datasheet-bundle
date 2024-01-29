@@ -21,7 +21,7 @@
         <table class="table table-sm table-striped">
             <thead>
             {% for column in datasheet.columns %}
-                <th>{{ column.title }}</th>
+                <th>{{ (datasheet.columnNamePrefix ~ column.title)|trans }}</th>
             {% endfor %}
             </thead>
 
