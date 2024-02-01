@@ -1,0 +1,9 @@
+datasheet:
+  pagination:
+    first_page: 'First page'
+    last_page: 'Last page'
+    records_total: 'Records total'
+    records_per_page: 'Records per page'
+    pages_total: 'Pages total'
+    current_page: 'Current page'
+  empty: 'empty'
